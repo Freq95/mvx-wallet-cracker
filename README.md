@@ -1,133 +1,81 @@
-### ⚙️ `How to run the LIVE Github App`
-Set GitHub pages to gh-pages/root/
-Run from VS Code:
->npm run build
+# 🛡️ MVX Wallet Cracker – Educational App
 
->npm run deploy
+A React-based app that simulates a MultiversX wallet, allowing users to "crack" a fake seed phrase in a secure, educational environment.
 
 ---
-
-
-
-### ✅ `Prerequisites (Environment Setup)`
-
-To run or deploy this project, make sure you have:
-
-* **Node.js** ≥ 18.x
-  Download from: [https://nodejs.org](https://nodejs.org)
-
-* **npm** (comes with Node.js)
-  Confirm installed versions:
-
-  ```bash
-  node -v
-  npm -v
-  ```
-
-* **Git**
-  Download from: [https://git-scm.com](https://git-scm.com)
-
-* **Code editor** (recommended: [Visual Studio Code](https://code.visualstudio.com))
-
-* Optional (for deployment):
-
-  * A GitHub account and an empty repository created
-  * `gh-pages` installed (`npm install gh-pages --save-dev`)
-
----
-
-
-### 📄 `README.md`
-
-```md
-# 🛡️ MVX-wallet-cracker
-is an educational React app that simulates a blockchain wallet (MultiversX-style),
-protected by on-chain mechanisms.
-
-Its goal is to let users **attempt to crack** the wallet by entering
-a seed phrase — in a fully safe and educational environment.
-
-
-## ⚙️ Tech Stack
-
-- ⚛️ React (`create-react-app`)
-- 🎨 Tailwind CSS (dark minimal theme)
-- 🔃 GitHub Pages for deployment
-- 🔐 Fake seed phrase simulation + attempt counter
-- 📦 npm + gh-pages for deploy scripts
-
 
 ## 🚀 Live Demo
-
-Hosted on GitHub Pages:
-```
-🔗 [https://freq95.github.io/mvx-wallet-cracker/](https://freq95.github.io/mvx-wallet-cracker/)
-
-
----
-
-
-
-````
-## 🧠 Features
-
-- Displays a fake 24-word seed phrase
-- Users can input guesses to “crack” the wallet
-- Tracks the number of attempts (locally)
-- Footer showing version (`v0.1.0.2025`)
-- Educational-only use — no real keys or funds
-
-## 🧪 Run Locally
-
-```bash
-git clone https://github.com/USERNAME/wallet-sim-app.git
-cd wallet-sim-app
-npm install
-npm start
-````
-
-Then visit:
-👉 `http://localhost:3000`
-
----
-
-## 🌐 Deploy to GitHub Pages
-
-```bash
-npm run deploy
-```
-
-Make sure your `package.json` includes the correct homepage:
-
-```json
-  "homepage": "https://freq95.github.io/mvx-wallet-cracker"
-```
-
----
-
-## 🛠️ Ideas for Future Features
-
-* Smart contract integration (MultiversX)
-* Real-time attack logging with backend (Supabase/Firebase)
-* Random dynamic seed generation
-* xPortal login simulation
+[🔗 https://freq95.github.io/mvx-wallet-cracker/](https://freq95.github.io/mvx-wallet-cracker/)
 
 ---
 
 ## ⚠️ Disclaimer
+> This is a **simulation for educational purposes only**. Never input real seed phrases.
 
-This is a **simulation for educational purposes only**.
-**Never input real seed phrases** into this app.
+---
+
+## ✅ Features
+- Fake 24-word seed phrase (blurred by default)
+- "Crack wallet" input with attempt tracking
+- Clipboard copy tracking
+- EGLD balance + USD price via Coingecko
+- Token & NFT count from MultiversX API
+- Guardian lock simulation
+- xPortal / Ledger login with MultiversX SDK
+
+---
+
+## ⚙️ Tech Stack
+- ⚛️ React (CRA)
+- 🎨 Tailwind CSS (dark mode)
+- 🔐 @multiversx/sdk-dapp
+- 📈 Coingecko API
+- 🌍 GitHub Pages for deploy
+
+---
+
+## 🧪 Run Locally
+```bash
+git clone https://github.com/freq95/mvx-wallet-cracker.git
+cd mvx-wallet-cracker
+npm install
+npm start
+```
+Visit 👉 `http://localhost:3000`
+
+---
+
+## 🌐 Deploy to GitHub Pages
+Make sure your `package.json` includes:
+```json
+"homepage": "https://freq95.github.io/mvx-wallet-cracker"
+```
+Then run:
+```bash
+npm run build
+npm run deploy
+```
+Set GitHub Pages to use `gh-pages / root`
+
+---
+
+## 🔐 Auth Setup (optional)
+To enable xPortal / Ledger login:
+```bash
+npm install @multiversx/sdk-dapp
+```
+Wrap your app in `<DappProvider>` in `index.js`
+Use `<LoginButton>` from the SDK inside your component
+
+---
+
+## 🛠️ Ideas for Future Features
+- Smart contract logging (MultiversX chain)
+- Leaderboard for cracking attempts
+- Randomized seed generator
+- Backend with Supabase or Firebase
 
 ---
 
 ## 📄 License
-
-MIT – free to use and extend.
-
-```
-
----
-
-Would you like me to save this directly into your project as a real `README.md` file?
-```
+MIT – free to use and extend
