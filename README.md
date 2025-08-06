@@ -1,70 +1,121 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### ✅ Prerequisites (Environment Setup)
 
-In the project directory, you can run:
+To run or deploy this project, make sure you have:
 
-### `npm start`
+* **Node.js** ≥ 18.x
+  Download from: [https://nodejs.org](https://nodejs.org)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* **npm** (comes with Node.js)
+  Confirm installed versions:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  ```bash
+  node -v
+  npm -v
+  ```
 
-### `npm test`
+* **Git**
+  Download from: [https://git-scm.com](https://git-scm.com)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* **Code editor** (recommended: [Visual Studio Code](https://code.visualstudio.com))
 
-### `npm run build`
+* Optional (for deployment):
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  * A GitHub account and an empty repository created
+  * `gh-pages` installed (`npm install gh-pages --save-dev`)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### 📄 `README.md`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```md
+# 🛡️ MVX-wallet-cracker
+is an educational React app that simulates a blockchain wallet (MultiversX-style),
+protected by on-chain mechanisms.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Its goal is to let users **attempt to crack** the wallet by entering
+a seed phrase — in a fully safe and educational environment.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## ⚙️ Tech Stack
 
-## Learn More
+- ⚛️ React (`create-react-app`)
+- 🎨 Tailwind CSS (dark minimal theme)
+- 🔃 GitHub Pages for deployment
+- 🔐 Fake seed phrase simulation + attempt counter
+- 📦 npm + gh-pages for deploy scripts
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🚀 Live Demo
 
-### Code Splitting
+Hosted on GitHub Pages:
+```
+🔗 [https://freq95.github.io/mvx-wallet-cracker/](https://freq95.github.io/mvx-wallet-cracker/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+````
+## 🧠 Features
 
-### Making a Progressive Web App
+- Displays a fake 24-word seed phrase
+- Users can input guesses to “crack” the wallet
+- Tracks the number of attempts (locally)
+- Footer showing version (`v0.1.0.2025`)
+- Educational-only use — no real keys or funds
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🧪 Run Locally
 
-### Advanced Configuration
+```bash
+git clone https://github.com/USERNAME/wallet-sim-app.git
+cd wallet-sim-app
+npm install
+npm start
+````
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Then visit:
+👉 `http://localhost:3000`
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🌐 Deploy to GitHub Pages
 
-### `npm run build` fails to minify
+```bash
+npm run deploy
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Make sure your `package.json` includes the correct homepage:
+
+```json
+  "homepage": "https://freq95.github.io/mvx-wallet-cracker"
+```
+
+---
+
+## 🛠️ Ideas for Future Features
+
+* Smart contract integration (MultiversX)
+* Real-time attack logging with backend (Supabase/Firebase)
+* Random dynamic seed generation
+* xPortal login simulation
+
+---
+
+## ⚠️ Disclaimer
+
+This is a **simulation for educational purposes only**.
+**Never input real seed phrases** into this app.
+
+---
+
+## 📄 License
+
+MIT – free to use and extend.
+
+```
+
+---
+
+Would you like me to save this directly into your project as a real `README.md` file?
+```
