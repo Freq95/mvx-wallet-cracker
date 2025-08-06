@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mvx-wallet-cracker/static/css/main.1d2c3280.css",
+    "main.js": "/mvx-wallet-cracker/static/js/main.20e2fbcd.js",
+    "static/js/453.6cbb9deb.chunk.js": "/mvx-wallet-cracker/static/js/453.6cbb9deb.chunk.js",
+    "index.html": "/mvx-wallet-cracker/index.html",
+    "main.1d2c3280.css.map": "/mvx-wallet-cracker/static/css/main.1d2c3280.css.map",
+    "main.20e2fbcd.js.map": "/mvx-wallet-cracker/static/js/main.20e2fbcd.js.map",
+    "453.6cbb9deb.chunk.js.map": "/mvx-wallet-cracker/static/js/453.6cbb9deb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1d2c3280.css",
+    "static/js/main.20e2fbcd.js"
+  ]
+}
