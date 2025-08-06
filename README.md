@@ -1,6 +1,15 @@
+### ⚙️ `How to run the LIVE Github App`
+Set GitHub pages to gh-pages/root/
+Run from VS Code:
+>npm run build
+
+>npm run deploy
+
+---
 
 
-### ✅ Prerequisites (Environment Setup)
+
+### ✅ `Prerequisites (Environment Setup)`
 
 To run or deploy this project, make sure you have:
 
@@ -53,6 +62,9 @@ a seed phrase — in a fully safe and educational environment.
 Hosted on GitHub Pages:
 ```
 🔗 [https://freq95.github.io/mvx-wallet-cracker/](https://freq95.github.io/mvx-wallet-cracker/)
+
+
+---
 
 
 
