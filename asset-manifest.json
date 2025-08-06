@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/mvx-wallet-cracker/static/css/main.ef9d881b.css",
-    "main.js": "/mvx-wallet-cracker/static/js/main.db81ca4a.js",
-    "static/js/453.6cbb9deb.chunk.js": "/mvx-wallet-cracker/static/js/453.6cbb9deb.chunk.js",
+    "main.css": "/mvx-wallet-cracker/static/css/main.ecd70fa1.css",
+    "main.js": "/mvx-wallet-cracker/static/js/main.c169a7de.js",
     "index.html": "/mvx-wallet-cracker/index.html",
-    "main.ef9d881b.css.map": "/mvx-wallet-cracker/static/css/main.ef9d881b.css.map",
-    "main.db81ca4a.js.map": "/mvx-wallet-cracker/static/js/main.db81ca4a.js.map",
-    "453.6cbb9deb.chunk.js.map": "/mvx-wallet-cracker/static/js/453.6cbb9deb.chunk.js.map"
+    "main.ecd70fa1.css.map": "/mvx-wallet-cracker/static/css/main.ecd70fa1.css.map",
+    "main.c169a7de.js.map": "/mvx-wallet-cracker/static/js/main.c169a7de.js.map"
   },
   "entrypoints": [
-    "static/css/main.ef9d881b.css",
-    "static/js/main.db81ca4a.js"
+    "static/css/main.ecd70fa1.css",
+    "static/js/main.c169a7de.js"
   ]
 }
