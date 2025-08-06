@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import qrImage from './qr.png';
 
 export default function GuardianSim() {
   const [attempts, setAttempts] = useState(() => {
@@ -16,6 +17,7 @@ export default function GuardianSim() {
   const [copied, setCopied] = useState(false);
   const [esdtCount, setEsdtCount] = useState(null);
   const [nftCount, setNftCount] = useState(null);
+  const [darkMode, setDarkMode] = useState(false);
 
   const correctKey = 'drastic session fiction blur banner equip dinner shadow biology oppose tumble roast maple tornado awkward invite visual raccoon liar burden cart mansion rug blur bridge';
 
@@ -55,9 +57,9 @@ export default function GuardianSim() {
     localStorage.setItem('attempts', newAttempts);
 
     if (input === correctKey) {
-      setStatus('🔒 Access blocked: Wallet is protected by Guardian 2FA.');
+      setStatus('🔒 access blocked: wallet is protected by guardian 2fa.');
     } else {
-      setStatus('❌ Incorrect phrase. Try again.');
+      setStatus('❌ incorrect phrase, try again!');
     }
   };
 
@@ -78,46 +80,90 @@ export default function GuardianSim() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-gray-900 text-gray-100 select-none">
-      <div className="w-full max-w-2xl bg-gray-800 p-6 rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold mb-2">
-  <span className="animate-pulse inline-block">🤖</span> Guardian Enabled ✅
-</h1>
-<p className="text-sm text-green-300">
-  💰 Wallet Balance: {balance ? `${balance} EGLD` : 'Loading...'} {usdValue && usdValue !== "N/A" ? `≈ $${usdValue}` : ''}
-</p>
-<p className="text-xs text-gray-400">
-  📦 ESDT Tokens: <strong>{esdtCount ?? '...'}</strong> · 🎨 NFTs: <strong>{nftCount ?? '...'}</strong>
-</p>
-<p className="text-xs text-gray-400 mb-4">
-  🔁 Number of attempts so far: <strong>{attempts}</strong> · 🔎 Copied <strong>{copiedCount}</strong> times
-</p>
-        <div className="bg-gray-700 p-4 rounded-md text-sm mb-4">
-          <p><strong>Public Address:</strong> erd17taamhdngx3km3y74697yhzk7zxprxjt4klem5jt0wcmp80q9rus2vf688</p>
-<div className="grid grid-cols-3 gap-2 mt-2 text-xs font-mono text-gray-300 [&>*]:blur-sm hover:[&>*]:blur-none transition-all duration-300">
-  <div>charge</div>     <div>2. pull</div>        <div>3. social</div>
-  <div>4. wagon</div>      <div>5. sing</div>        <div>6. senior</div>
-  <div>7. acquire</div>    <div>8. sweet</div>       <div>9. patient</div>
-  <div>10. special</div>   <div>11. special</div>    <div>12. attack</div>
-  <div>13. property</div>  <div>14. elite</div>      <div>15. march</div>
-  <div>16. initial</div>   <div>17. health</div>     <div>18. cream</div>
-  <div>19. almost</div>    <div>20. switch</div>     <div>21. race</div>
-  <div>22. trumpet</div>   <div>23. buyer</div>      <div>24. lawsuit</div>
+    <div className={`${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'} flex flex-col items-center justify-center min-h-screen p-6 select-none`}>
+      <div className="w-full flex justify-end mt-4 px-6">
+  <label className="flex items-center cursor-pointer">
+    <div className="mr-3 text-sm text-gray-700 dark:text-gray-300">
+      {darkMode ? '🌙 Dark Mode' : '🌞 Light Mode'}
+    </div>
+    <div className="relative">
+      <input
+        type="checkbox"
+        className="sr-only"
+        checked={darkMode}
+        onChange={() => setDarkMode(!darkMode)}
+      />
+      <div className="w-10 h-5 bg-gray-300 rounded-full shadow-inner dark:bg-gray-600 transition-colors duration-300"></div>
+      <div className={`dot absolute left-1 top-1 w-3 h-3 bg-white rounded-full shadow transform transition-transform duration-300 ${darkMode ? 'translate-x-5' : ''}`}></div>
+    </div>
+  </label>
 </div>
+
+      <div className={`${darkMode? "w-full max-w-2xl p-6 rounded-lg shadow-md bg-white dark:bg-gray-800" : "w-full max-w-2xl p-6 rounded-lg shadow-md bg-white dark:bg-gray-200"}`}>
+        <div className="flex justify-center items-center mb-4">
+          <h1 className="text-2xl font-bold text-center w-full">
+            <span className="animate-pulse inline-block">🤖</span> guardian enabled ✅
+          </h1>
+        </div>
+
+        <div className="flex justify-center mb-6">
+          <img
+            src={qrImage}
+            alt="qr code"
+            className="w-72 h-72 bg-white p-2 rounded shadow"
+          />
+        </div>
+
+        <div className="grid grid-cols-2 gap-4 mb-6">
+          <div className={`${darkMode? "bg-gray-100 dark:bg-gray-700 p-4 rounded shadow" : "bg-gray-100 dark:bg-gray-100 p-4 rounded shadow"}`}>
+            <p className="text-green-700 dark:text-green-300 text-sm">💰 Wallet Balance</p>
+            <p className="font-bold">{balance ? `${balance} EGLD` : 'loading...'} {usdValue && usdValue !== "N/A" ? `≈ $${usdValue}` : ''}</p>
+          </div>
+          <div className={`${darkMode? "bg-gray-100 dark:bg-gray-700 p-4 rounded shadow" : "bg-gray-100 dark:bg-gray-100 p-4 rounded shadow"}`}>
+            <p className="text-gray-700 dark:text-gray-300 text-sm">📦 ESDT Tokens</p>
+            <p className="font-bold">{esdtCount ?? '...'}</p>
+          </div>
+          <div className={`${darkMode? "bg-gray-100 dark:bg-gray-700 p-4 rounded shadow" : "bg-gray-100 dark:bg-gray-100 p-4 rounded shadow"}`}>
+            <p className="text-gray-700 dark:text-gray-300 text-sm">🎨 NFTs</p>
+            <p className="font-bold">{nftCount ?? '...'}</p>
+          </div>
+          <div className={`${darkMode? "bg-gray-100 dark:bg-gray-700 p-4 rounded shadow" : "bg-gray-100 dark:bg-gray-100 p-4 rounded shadow"}`}>
+            <p className="text-gray-700 dark:text-gray-300 text-sm">🔁 Attempts</p>
+            <p className="font-bold">{attempts}</p>
+          </div>
+          <div className={`${darkMode? "bg-gray-100 dark:bg-gray-700 p-4 rounded shadow" : "bg-gray-100 dark:bg-gray-100 p-4 rounded shadow"}`}>
+            <p className="text-gray-700 dark:text-gray-300 text-sm">🔎 Copied</p>
+            <p className="font-bold">{copiedCount}</p>
+          </div>
+        </div>
+
+        <div className={`${darkMode? "bg-gray-100 dark:bg-gray-700 p-4 rounded-md text-sm mb-4" : "bg-gray-700 dark:bg-gray-100 p-4 rounded-md text-sm mb-4"}`}>
+          <p><strong>public address:</strong> erd17taamhdngx3km3y74697yhzk7zxprxjt4klem5jt0wcmp80q9rus2vf688</p>
+          <div className={`${darkMode? "grid grid-cols-3 gap-2 mt-2 text-xs font-mono text-gray-800 dark:text-gray-100 [&>*]:blur-sm hover:[&>*]:blur-none transition-all duration-300" : "grid grid-cols-3 gap-2 mt-2 text-xs font-mono text-gray-800 dark:text-gray-800 [&>*]:blur-sm hover:[&>*]:blur-none transition-all duration-300"}`}>
+            <div>charge</div><div>pull</div><div>social</div>
+            <div>wagon</div><div>sing</div><div>senior</div>
+            <div>acquire</div><div>sweet</div><div>patient</div>
+            <div>special</div><div>special</div><div>attack</div>
+            <div>property</div><div>elite</div><div>march</div>
+            <div>initial</div><div>health</div><div>cream</div>
+            <div>almost</div><div>switch</div><div>race</div>
+            <div>trumpet</div><div>buyer</div><div>lawsuit</div>
+          </div>
           <button
             onClick={handleCopySeed}
-            className={`text-xs mt-1 px-2 py-1 rounded transition-all duration-300 ${copied ? 'bg-green-600 text-white' : 'bg-gray-600 text-white'}`}
+            className={`text-xs mt-1 px-2 py-1 rounded transition-all duration-300 ${copied ? 'bg-green-600 text-white' : 'bg-gray-400 text-white'}`}
           >
             {copied ? '✅ copied' : '📋 copy seed'}
           </button>
-                    <p className="mt-2 text-gray-300">This wallet is protected with on-chain security mechanisms.<br />Try entering the correct seed phrase to access the funds.</p>
+          <p className="text-xs text-gray-600 dark:text-gray-300 mt-1">🔎 copied {copiedCount} times</p>
+          <p className="mt-2 text-gray-800 dark:text-gray-200">this wallet is protected with on-chain security mechanisms.<br />try entering the correct seed phrase to access the funds.</p>
         </div>
 
         <div className="space-y-2 mb-4">
           <input
             type="text"
-            className="w-full px-4 py-2 border border-gray-600 rounded-md bg-gray-900 text-gray-100"
-            placeholder="Enter the seed phrase (24 words)"
+            className={`${darkMode? "w-full px-4 py-2 border border-gray-400 rounded-md bg-gray-100 dark:bg-gray-600 text-gray-900 dark:text-white" : "w-full px-4 py-2 border border-gray-400 rounded-md bg-gray-100 dark:bg-gray-100 text-gray-900 dark:text-white"}`}
+            placeholder="enter the seed phrase (24 words)"
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
@@ -125,15 +171,13 @@ export default function GuardianSim() {
             className="w-full bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded-md text-white"
             onClick={handleAttempt}
           >
-            Try to break the wallet
+            try to break the wallet
           </button>
-          {status && <p className="text-sm text-yellow-400 mt-2">{status}</p>}
+          {status && <p className={`${darkMode? "text-sm text-yellow-600 dark:text-yellow-300 mt-2" : "text-sm text-red-600 dark:text-red-500 mt-2"}`}>{status}</p>}
         </div>
 
-        
-
-        <div className="text-xs text-red-400 pt-2">
-          ⚠️ Never enter a real seed phrase, without Guardian enabled! This app is for educational and testing purposes only.
+        <div className="text-xs text-blue-600 dark:text-blue-300 pt-2">
+          🔗 official mvx wallet recovery link - <a href="https://wallet.multiversx.com/recover" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-400">https://wallet.multiversx.com/recover</a>
         </div>
       </div>
     </div>
