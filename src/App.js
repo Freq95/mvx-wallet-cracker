@@ -8,7 +8,7 @@ function App() {
         <GuardianSim />
       </div>
       <footer className="text-center text-sm text-gray-400 p-2">
-        v0.1.0.2025
+        v0.2.0.2025
       </footer>
     </div>
   );
